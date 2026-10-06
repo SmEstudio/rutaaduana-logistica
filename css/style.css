@@ -1,0 +1,371 @@
+/* ==========================================================================
+   RutaAduana - Logística Internacional e Importaciones desde China
+   Diseño Portuario / Marítimo / Comercio Exterior
+   ========================================================================== */
+
+:root {
+  --primary: #0c2340;          /* Deep Maritime Navy */
+  --primary-hover: #07172b;
+  --accent: #e65100;           /* International Cargo Orange */
+  --accent-hover: #bf360c;
+  --accent-light: #fff3e0;
+  --sea-blue: #0284c7;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --border-cargo: #cbd5e1;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px -2px rgba(12, 35, 64, 0.12);
+  --radius-sm: 4px;            /* Sharp, industrial styling */
+  --radius-md: 6px;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --font-mono: 'Consolas', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+a { color: var(--sea-blue); text-decoration: none; font-weight: 600; }
+a:hover { color: var(--accent); text-decoration: underline; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header Portuario */
+.site-header {
+  background: var(--primary);
+  border-bottom: 3px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logo span { color: var(--accent); }
+
+.logo-badge {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: 3px;
+  margin-left: 4px;
+}
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Hero Sección Tipo Buque / Terminal */
+.hero {
+  background: linear-gradient(135deg, #0c2340 0%, #1e3a5f 70%, #0f2b48 100%);
+  color: #ffffff;
+  padding: 60px 0;
+  position: relative;
+  border-bottom: 4px solid var(--accent);
+  margin-bottom: 35px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 14px;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  max-width: 880px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn-cargo {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.btn-cargo:hover { background: var(--accent-hover); text-decoration: none; color: #fff; }
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #94a3b8;
+  padding: 10px 22px;
+  font-weight: 700;
+  border-radius: 3px;
+  display: inline-block;
+}
+.btn-outline:hover { background: rgba(255, 255, 255, 0.1); color: #fff; text-decoration: none; border-color: #fff; }
+
+/* Grid & Layouts */
+.main-layout { display: grid; grid-template-columns: 2.3fr 1fr; gap: 36px; margin-bottom: 50px; }
+.main-layout.single-column { grid-template-columns: 1fr; max-width: 880px; margin: 0 auto 50px; }
+
+/* Tarjetas Tipo Contenedor Logístico */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-top: 20px; }
+.card-cargo {
+  background: var(--bg-card);
+  border: 1px solid var(--border-cargo);
+  border-left: 5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-cargo:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: #94a3b8; }
+.cargo-stamp {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.card-cargo h3 { font-size: 1.25rem; color: var(--primary); margin-bottom: 10px; line-height: 1.35; font-weight: 800; }
+.card-cargo h3 a { color: var(--primary); }
+.card-cargo h3 a:hover { color: var(--accent); text-decoration: none; }
+.card-cargo p { color: var(--text-muted); font-size: 0.92rem; flex-grow: 1; margin-bottom: 16px; }
+.cargo-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+/* Calculadora Landed Cost Industrial */
+.calculator-panel {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 30px;
+  margin-bottom: 35px;
+  box-shadow: var(--shadow-md);
+}
+.calc-header {
+  border-bottom: 2px dashed #cbd5e1;
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+}
+.calc-header h2 { font-size: 1.55rem; color: var(--primary); font-weight: 900; }
+.calc-header p { color: #64748b; font-size: 0.92rem; }
+
+.form-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 18px; }
+.form-group label { display: block; font-weight: 700; font-size: 0.88rem; color: var(--primary); margin-bottom: 6px; }
+.input-cargo {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #f8fafc;
+}
+.input-cargo:focus { outline: none; border-color: var(--accent); background: #ffffff; }
+
+.customs-receipt {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-top: 4px solid var(--primary);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  border-bottom: 1px dashed #e2e8f0;
+  font-size: 0.92rem;
+}
+.receipt-total {
+  border-top: 2px solid var(--primary);
+  padding-top: 12px;
+  margin-top: 8px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 25px; }
+.widget-box {
+  background: #ffffff;
+  border: 1px solid var(--border-cargo);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+}
+.widget-box h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.widget-box ul { list-style: none; }
+.widget-box li { padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.92rem; }
+.widget-box a { color: var(--text-main); }
+.widget-box a:hover { color: var(--accent); }
+
+/* Publicidad */
+.ad-slot-wrapper { margin: 30px auto; text-align: center; }
+.ad-label { display: block; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: #94a3b8; margin-bottom: 4px; }
+.ad-box {
+  background: #f1f5f9;
+  border: 1px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: 90px;
+  color: #64748b;
+}
+.header-banner { width: 100%; max-width: 728px; height: 90px; }
+.sidebar-banner { width: 100%; max-width: 300px; min-height: 250px; }
+.in-article-banner { width: 100%; max-width: 728px; min-height: 120px; }
+.footer-banner { width: 100%; max-width: 970px; height: 90px; }
+
+/* Contenido Legal & Artículos */
+.article-header { margin-bottom: 26px; }
+.breadcrumbs { font-size: 0.85rem; color: #64748b; margin-bottom: 12px; }
+.article-title { font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1.25; margin-bottom: 14px; }
+.article-meta { display: flex; gap: 16px; font-size: 0.85rem; color: #64748b; padding-bottom: 14px; border-bottom: 2px solid #e2e8f0; font-family: var(--font-mono); }
+.article-body { font-size: 1.05rem; line-height: 1.8; color: #334155; }
+.article-body h2 { font-size: 1.65rem; color: var(--primary); margin: 34px 0 14px; font-weight: 800; border-left: 4px solid var(--accent); padding-left: 12px; }
+.article-body h3 { font-size: 1.3rem; color: var(--primary); margin: 24px 0 10px; font-weight: 700; }
+.article-body p { margin-bottom: 18px; }
+.article-body ul, .article-body ol { margin: 0 0 22px 26px; }
+.article-body li { margin-bottom: 8px; }
+
+.legal-content {
+  background: #ffffff;
+  border: 1px solid var(--border-cargo);
+  border-radius: var(--radius-sm);
+  padding: 38px;
+  box-shadow: var(--shadow-sm);
+}
+.legal-content h1 { font-size: 2.1rem; color: var(--primary); margin-bottom: 12px; font-weight: 900; }
+.legal-content h2 { font-size: 1.35rem; color: var(--primary); margin: 26px 0 10px; font-weight: 800; }
+
+/* Footer Terminal */
+.site-footer {
+  background: #081a30;
+  color: #94a3b8;
+  padding: 60px 0 30px;
+  margin-top: 60px;
+  border-top: 4px solid var(--accent);
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand h3 { color: #ffffff; font-size: 1.35rem; margin-bottom: 12px; font-weight: 900; }
+.footer-col h4 { color: #ffffff; margin-bottom: 14px; font-size: 1rem; text-transform: uppercase; font-weight: 800; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a { color: #94a3b8; font-weight: 500; font-size: 0.9rem; }
+.footer-col a:hover { color: #ffffff; }
+.footer-bottom { border-top: 1px solid #1e3a5f; padding-top: 25px; display: flex; justify-content: space-between; font-size: 0.85rem; font-family: var(--font-mono); }
+
+/* Banner Cookies */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #0c2340;
+  color: #ffffff;
+  padding: 20px;
+  z-index: 9999;
+  display: none;
+  border-top: 3px solid var(--accent);
+}
+.cookie-content { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+@media (max-width: 992px) {
+  .main-layout { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.95rem; }
+  .main-nav { display: none; position: absolute; top: 74px; left: 0; right: 0; background: var(--primary); padding: 20px; }
+  .main-nav.active { display: block; }
+  .nav-links { flex-direction: column; gap: 10px; }
+  .menu-toggle { display: block; }
+  .footer-grid { grid-template-columns: 1fr; }
+}

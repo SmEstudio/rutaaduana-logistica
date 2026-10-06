@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0c2340"/>
+  <!-- Contenedor / Barco -->
+  <rect x="14" y="24" width="16" height="12" rx="2" fill="#e65100"/>
+  <rect x="34" y="24" width="16" height="12" rx="2" fill="#0284c7"/>
+  <path d="M10 40 L54 40 L48 50 L16 50 Z" fill="#ffffff"/>
+  <!-- Olas -->
+  <path d="M8 54 C16 52 24 56 32 54 C40 52 48 56 56 54" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+</svg>

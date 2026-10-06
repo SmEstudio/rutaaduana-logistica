@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadoras Aduaneras y de Logística Internacional - RutaAduana</title>
+  <meta name="description" content="Calculadoras gratuitas para importadores: coste total en destino (Landed Cost), aranceles e IVA de aduanas, y cálculo de metros cúbicos (CBM) y peso volumétrico marítimo/aéreo.">
+  <link rel="canonical" href="https://rutaaduana-importaciones.com/herramientas/">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo">
+        🚢 Ruta<span>Aduana</span>
+        <span class="logo-badge">LOGÍSTICA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="index.html" class="active">Calculadoras</a></li>
+          <li><a href="../articulos/guia-paso-a-paso-importar-desde-china-alibaba.html">Guía Alibaba</a></li>
+          <li><a href="../articulos/incoterms-2020-fob-cif-ddp-exw-explicados.html">Incoterms</a></li>
+          <li><a href="../articulos/partida-arancelaria-codigo-hs-aranceles-aduanas.html">Aranceles HS</a></li>
+          <li><a href="../sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box header-banner" data-ad-slot="header"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="breadcrumbs" style="margin-top: 15px;">
+      <a href="../index.html">Inicio</a> &gt; <span>Herramientas Logísticas</span>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="main-layout single-column">
+      
+      <div style="text-align: center; margin-bottom: 35px;">
+        <span class="hero-tag">Herramientas de Comercio Exterior</span>
+        <h1 style="font-size: 2.3rem; color: var(--primary); margin-top: 10px;">Calculadoras para Importadores y Compras en Asia</h1>
+        <p style="color: #64748b;">Herramientas profesionales para estimar costes aduaneros antes de transferir dinero a fábricas.</p>
+      </div>
+
+      <!-- Herramienta 1: Landed Cost -->
+      <section id="calculadora-landed" class="calculator-panel">
+        <div class="calc-header">
+          <span class="cargo-stamp">HERRAMIENTA 1 • ARANCELES E IMPUESTOS</span>
+          <h2>Calculadora de Landed Cost (Coste en Almacén)</h2>
+          <p>Calcula el valor CIF aduanero, aranceles, IVA y el coste unitario neto puesto en destino.</p>
+        </div>
+
+        <form id="landed-calc-form" onsubmit="event.preventDefault();">
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="calc-units">Unidades a Importar:</label>
+              <input type="number" id="calc-units" class="input-cargo" value="500" min="1" step="10">
+            </div>
+            <div class="form-group">
+              <label for="calc-fob-unit">Precio FOB Unitario ($ / €):</label>
+              <input type="number" id="calc-fob-unit" class="input-cargo" value="6.50" min="0.1" step="0.1">
+            </div>
+            <div class="form-group">
+              <label for="calc-freight">Flete Internacional Total ($):</label>
+              <input type="number" id="calc-freight" class="input-cargo" value="750" min="0" step="50">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="calc-insurance">Seguro Transporte ($):</label>
+              <input type="number" id="calc-insurance" class="input-cargo" value="45" min="0" step="5">
+            </div>
+            <div class="form-group">
+              <label for="calc-tariff-pct">% Arancel Aduana (Taric):</label>
+              <input type="number" id="calc-tariff-pct" class="input-cargo" value="4.7" min="0" max="50" step="0.1">
+            </div>
+            <div class="form-group">
+              <label for="calc-vat-pct">% IVA de Importación:</label>
+              <input type="number" id="calc-vat-pct" class="input-cargo" value="21" min="0" max="30">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="calc-customs-fee">Despacho Aduana y Tasas (€):</label>
+              <input type="number" id="calc-customs-fee" class="input-cargo" value="190" min="0" step="10">
+            </div>
+            <div class="form-group">
+              <label for="calc-target-margin">% Margen Comercial Deseado:</label>
+              <input type="number" id="calc-target-margin" class="input-cargo" value="60" min="10" max="95">
+            </div>
+          </div>
+
+          <div class="customs-receipt">
+            <div class="receipt-row">
+              <span>Base Imponible en Aduana (CIF):</span>
+              <strong id="res-cif-total">4.045,00 $ / €</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Arancel a Pagar (No recuperable):</span>
+              <strong id="res-duty-amount" style="color: #c2410c;">190,12 $ / €</strong>
+            </div>
+            <div class="receipt-row">
+              <span>IVA Importación (Deducible en modelo 303):</span>
+              <strong id="res-vat-amount" style="color: #0284c7;">887,27 $ / €</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Coste Total Mercancía en Almacén:</span>
+              <strong id="res-total-landed" style="color: #0c2340;">4.425,12 $ / €</strong>
+            </div>
+            <div class="receipt-row" style="background:#e0f2fe; padding:8px; margin-top:8px;">
+              <span style="font-weight:700; color:#0369a1;">Coste Neto Unitario:</span>
+              <strong id="res-unit-cost" style="font-size:1.15rem; color:#0c2340;">8.85 €/ud.</strong>
+            </div>
+            <div class="receipt-row receipt-total">
+              <span>PVP Sugerido para Venta al Público:</span>
+              <span id="res-suggested-pvp">26.77 € (IVA inc.)</span>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Bloque AdSense Intermedio -->
+      <div class="ad-slot-wrapper">
+        <span class="ad-label">Publicidad</span>
+        <div class="ad-box in-article-banner" data-ad-slot="inArticle"></div>
+      </div>
+
+      <!-- Herramienta 2: Calculadora CBM y Volumen -->
+      <section id="calculadora-volumen" class="calculator-panel">
+        <div class="calc-header">
+          <span class="cargo-stamp">HERRAMIENTA 2 • FLETE MARÍTIMO Y AÉREO</span>
+          <h2>Calculadora de Metros Cúbicos (CBM) y Peso Volumétrico</h2>
+          <p>Calcula el cubicaje de tus cajas maestras y conoce si tu envío tarifará por peso real o por volumen.</p>
+        </div>
+
+        <form id="cbm-calc-form" onsubmit="event.preventDefault();">
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="cbm-boxes">Número de Cajas (Cartons):</label>
+              <input type="number" id="cbm-boxes" class="input-cargo" value="20" min="1">
+            </div>
+            <div class="form-group">
+              <label for="cbm-len">Largo por Caja (cm):</label>
+              <input type="number" id="cbm-len" class="input-cargo" value="50" min="1">
+            </div>
+            <div class="form-group">
+              <label for="cbm-width">Ancho por Caja (cm):</label>
+              <input type="number" id="cbm-width" class="input-cargo" value="40" min="1">
+            </div>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="cbm-height">Alto por Caja (cm):</label>
+              <input type="number" id="cbm-height" class="input-cargo" value="30" min="1">
+            </div>
+            <div class="form-group">
+              <label for="cbm-weight">Peso Real por Caja (kg):</label>
+              <input type="number" id="cbm-weight" class="input-cargo" value="12" min="0.5" step="0.5">
+            </div>
+          </div>
+
+          <div class="customs-receipt">
+            <div class="receipt-row">
+              <span>Volumen Total del Envío (CBM):</span>
+              <strong id="cbm-res-total" style="color: var(--accent); font-size:1.15rem;">1,20 m³ (CBM)</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Peso Real de la Mercancía:</span>
+              <strong id="cbm-res-actual-kg">240 kg</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Peso Volumétrico Aéreo (Divisor 5000):</span>
+              <strong id="cbm-res-air-kg">240 kg volumétricos</strong>
+            </div>
+            <div class="receipt-row" style="border-top:2px solid var(--primary); padding-top:8px;">
+              <span>Tipo de Transporte Recomendado:</span>
+              <strong style="color: #0369a1;">Grupaje Marítimo (LCL) por optimización de coste</strong>
+            </div>
+          </div>
+        </form>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.getElementById('cbm-calc-form');
+          if (!form) return;
+          function calcCbm() {
+            const boxes = parseInt(document.getElementById('cbm-boxes').value, 10) || 1;
+            const l = parseFloat(document.getElementById('cbm-len').value) || 0;
+            const w = parseFloat(document.getElementById('cbm-width').value) || 0;
+            const h = parseFloat(document.getElementById('cbm-height').value) || 0;
+            const weight = parseFloat(document.getElementById('cbm-weight').value) || 0;
+
+            const cbm = (boxes * l * w * h) / 1000000;
+            const actualKg = boxes * weight;
+            const airKg = (boxes * l * w * h) / 5000;
+
+            document.getElementById('cbm-res-total').textContent = cbm.toFixed(2) + ' m³ (CBM)';
+            document.getElementById('cbm-res-actual-kg').textContent = actualKg.toFixed(1) + ' kg';
+            document.getElementById('cbm-res-air-kg').textContent = airKg.toFixed(1) + ' kg volumétricos';
+          }
+          form.addEventListener('input', calcCbm);
+          calcCbm();
+        });
+        </script>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box footer-banner" data-ad-slot="footer"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 RutaAduana. Comercio exterior sin barreras.</p>
+      <div>
+        <a href="../politica-de-privacidad.html" style="color: #cbd5e1; margin-right: 15px;">Privacidad</a>
+        <a href="../terminos-y-condiciones.html" style="color: #cbd5e1;">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/ads-config.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

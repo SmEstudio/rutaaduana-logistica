@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RutaAduana - Guías de Importación desde China, Logística e Incoterms</title>
+  <meta name="description" content="Aprende a importar desde China paso a paso sin intermediarios: cálculo de aranceles aduaneros, Incoterms 2020 (FOB, CIF, DDP), negociación con fábricas en Alibaba y control de calidad.">
+  <meta name="keywords" content="importar desde china, calculadora de aranceles, incoterms 2020 fob cif ddp, proveedores alibaba 1688, landed cost calculadora, aduanas despacho">
+  <link rel="canonical" href="https://rutaaduana-importaciones.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RutaAduana - Comercio Exterior e Importaciones Seguras">
+  <meta property="og:description" content="Manuales prácticos para emprendedores y empresas que compran en China. Calculadora de costes aduaneros en destino.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230c2340'/><text y='70' x='50' text-anchor='middle' font-size='60'>🚢</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "RutaAduana",
+    "url": "https://rutaaduana-importaciones.com/",
+    "description": "Portal especializado en importaciones desde Asia, aranceles aduaneros, transporte marítimo y gestión aduanera."
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        🚢 Ruta<span>Aduana</span>
+        <span class="logo-badge">LOGÍSTICA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Inicio</a></li>
+          <li><a href="herramientas/index.html">Calculadora Aduanera</a></li>
+          <li><a href="articulos/guia-paso-a-paso-importar-desde-china-alibaba.html">Guía Alibaba</a></li>
+          <li><a href="articulos/incoterms-2020-fob-cif-ddp-exw-explicados.html">Incoterms</a></li>
+          <li><a href="articulos/partida-arancelaria-codigo-hs-aranceles-aduanas.html">Aranceles HS</a></li>
+          <li><a href="sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Superior AdSense -->
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box header-banner" data-ad-slot="header"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-tag">Comercio Internacional & Aduanas</span>
+      <h1>Importa desde China con Rentabilidad y Cero Sorpresas en Aduanas</h1>
+      <p>Aprende a negociar con fabricantes, auditar fábricas, dominar los Incoterms y calcular con exactitud milimétrica el coste puesto en tu almacén (*Landed Cost*).</p>
+      <div class="hero-actions">
+        <a href="#calculadora-landed" class="btn-cargo">Calcular Coste de Importación</a>
+        <a href="articulos/guia-paso-a-paso-importar-desde-china-alibaba.html" class="btn-outline">Leer Guía para Principiantes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenedor Principal en 2 Columnas -->
+  <main class="container">
+    <div class="main-layout">
+      
+      <div class="content-area">
+        
+        <!-- Calculadora de Landed Cost Destacada -->
+        <section id="calculadora-landed" class="calculator-panel">
+          <div class="calc-header">
+            <span class="cargo-stamp">DOCUMENTO ADUANERO DE SIMULACIÓN</span>
+            <h2>Calculadora de Coste en Destino (Landed Cost & Aranceles)</h2>
+            <p>Calcula el valor en aduana (CIF), los aranceles arancelarios y el coste real unitario puesto en tu almacén.</p>
+          </div>
+
+          <form id="landed-calc-form" onsubmit="event.preventDefault();">
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label for="calc-units">Unidades a Importar:</label>
+                <input type="number" id="calc-units" class="input-cargo" value="500" min="1" step="10">
+              </div>
+              <div class="form-group">
+                <label for="calc-fob-unit">Precio FOB Unitario ($ / €):</label>
+                <input type="number" id="calc-fob-unit" class="input-cargo" value="6.50" min="0.1" step="0.1">
+              </div>
+              <div class="form-group">
+                <label for="calc-freight">Flete Internacional Total ($):</label>
+                <input type="number" id="calc-freight" class="input-cargo" value="750" min="0" step="50">
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label for="calc-insurance">Seguro Marítimo/Aéreo ($):</label>
+                <input type="number" id="calc-insurance" class="input-cargo" value="45" min="0" step="5">
+              </div>
+              <div class="form-group">
+                <label for="calc-tariff-pct">% Arancel Código HS (Taric):</label>
+                <input type="number" id="calc-tariff-pct" class="input-cargo" value="4.7" min="0" max="50" step="0.1">
+              </div>
+              <div class="form-group">
+                <label for="calc-vat-pct">% IVA de Importación:</label>
+                <input type="number" id="calc-vat-pct" class="input-cargo" value="21" min="0" max="30">
+              </div>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label for="calc-customs-fee">Despacho Aduana y THC (€):</label>
+                <input type="number" id="calc-customs-fee" class="input-cargo" value="190" min="0" step="10">
+              </div>
+              <div class="form-group">
+                <label for="calc-target-margin">% Margen Bruto Objetivo:</label>
+                <input type="number" id="calc-target-margin" class="input-cargo" value="60" min="10" max="95">
+              </div>
+            </div>
+
+            <!-- Recibo Aduanero Desglosado -->
+            <div class="customs-receipt">
+              <div class="receipt-row">
+                <span>Base Valor en Aduana (CIF = FOB + Flete + Seguro):</span>
+                <strong id="res-cif-total">4.045,00 $ / €</strong>
+              </div>
+              <div class="receipt-row">
+                <span>Arancel Aduanero a Liquidar:</span>
+                <strong id="res-duty-amount" style="color: #c2410c;">190,12 $ / €</strong>
+              </div>
+              <div class="receipt-row">
+                <span>IVA de Importación (Adelantado en Aduana):</span>
+                <strong id="res-vat-amount" style="color: #0284c7;">887,27 $ / €</strong>
+              </div>
+              <div class="receipt-row">
+                <span>Coste Neto Puesto en Almacén (Sin IVA):</span>
+                <strong id="res-total-landed" style="color: #0c2340;">4.425,12 $ / €</strong>
+              </div>
+              <div class="receipt-row" style="background:#e0f2fe; padding:8px; margin-top:8px;">
+                <span style="font-weight:700; color:#0369a1;">Coste Real por Unidad Importada:</span>
+                <strong id="res-unit-cost" style="font-size:1.15rem; color:#0c2340;">8.85 €/ud.</strong>
+              </div>
+              <div class="receipt-row receipt-total">
+                <span>PVP de Venta Sugerido (con 60% margen e IVA):</span>
+                <span id="res-suggested-pvp">26.77 € (IVA inc.)</span>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Bloque AdSense Intermedio -->
+        <div class="ad-slot-wrapper">
+          <span class="ad-label">Publicidad</span>
+          <div class="ad-box in-article-banner" data-ad-slot="inArticle"></div>
+        </div>
+
+        <!-- Sección de Artículos Clave -->
+        <section>
+          <div style="margin-bottom: 22px;">
+            <h2 style="font-size: 1.7rem; color: var(--primary); font-weight: 900;">Manuales de Comercio Internacional y Aduanas</h2>
+            <p style="color: #64748b;">Guías prácticas redactadas por profesionales del transporte marítimo y transitarios.</p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="card-cargo">
+              <span class="cargo-stamp">OPERACIONES • CHINA</span>
+              <h3><a href="articulos/guia-paso-a-paso-importar-desde-china-alibaba.html">Guía Paso a Paso para Importar desde China en Alibaba sin Ser Estafado</a></h3>
+              <p>Cómo filtrar fábricas reales frente a traders intermediarios, solicitar muestras, redactar contratos de compraventa y pagar con Trade Assurance.</p>
+              <div class="cargo-footer">
+                <span>Equipo RutaAduana</span>
+                <span>Lectura: 10 min</span>
+              </div>
+            </article>
+
+            <article class="card-cargo">
+              <span class="cargo-stamp">LOGÍSTICA • NORMAS ICC</span>
+              <h3><a href="articulos/incoterms-2020-fob-cif-ddp-exw-explicados.html">Incoterms 2020 Explicados: FOB vs CIF vs DDP, ¿Cuál te Conviene?</a></h3>
+              <p>Descubre quién paga el flete, quién asume el seguro y por qué comprar en condiciones CIF a menudo esconde sorpresas costosas en el puerto de llegada.</p>
+              <div class="cargo-footer">
+                <span>Equipo RutaAduana</span>
+                <span>Lectura: 9 min</span>
+              </div>
+            </article>
+
+            <article class="card-cargo">
+              <span class="cargo-stamp">CONTROL DE CALIDAD • AUDITORÍA</span>
+              <h3><a href="articulos/como-evitar-estafas-proveedores-chinos-auditoria.html">Cómo Auditar Proveedores en China e Inspeccionar la Carga (SGS / QIMA)</a></h3>
+              <p>Protocolos de inspección pre-embarque (PSI), cálculo de niveles de calidad aceptables (AQL) y cláusulas de retención de pagos.</p>
+              <div class="cargo-footer">
+                <span>Equipo RutaAduana</span>
+                <span>Lectura: 8 min</span>
+              </div>
+            </article>
+
+            <article class="card-cargo">
+              <span class="cargo-stamp">ADUANAS • FISCALIDAD</span>
+              <h3><a href="articulos/partida-arancelaria-codigo-hs-aranceles-aduanas.html">Partidas Arancelarias y Código HS: Cómo Saber los Impuestos de tu Producto</a></h3>
+              <p>Aprende a buscar el código TARIC de 10 dígitos en la base de datos de la Comisión Europea o aduanas locales y evita retenciones en el DUA.</p>
+              <div class="cargo-footer">
+                <span>Equipo RutaAduana</span>
+                <span>Lectura: 8 min</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Barra Lateral -->
+      <aside class="sidebar">
+        
+        <div class="ad-slot-wrapper" style="margin-top: 0;">
+          <span class="ad-label">Publicidad</span>
+          <div class="ad-box sidebar-banner" data-ad-slot="sidebar"></div>
+        </div>
+
+        <div class="widget-box">
+          <h3>Herramientas Logísticas</h3>
+          <ul>
+            <li><a href="#calculadora-landed">📦 Calculadora de Landed Cost</a></li>
+            <li><a href="herramientas/index.html#calculadora-volumen">📐 Calculadora de Peso Volumétrico (CBM)</a></li>
+            <li><a href="articulos/incoterms-2020-fob-cif-ddp-exw-explicados.html">📑 Tabla Comparativa de Incoterms</a></li>
+          </ul>
+        </div>
+
+        <div class="widget-box" style="background:#fff8e1; border-color:#ffe082;">
+          <h3 style="color:#b45309; border-color:#f59e0b;">⚠️ Aviso Aduanero</h3>
+          <p style="font-size:0.86rem; color:#78350f; line-height:1.55;">
+            Los aranceles e impuestos calculados se basan en normativas arancelarias estándar. Para operaciones de gran volumen, contrata siempre un agente de aduanas colegiado para la gestión del DUA de importación.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-slot-wrapper">
+      <span class="ad-label">Publicidad</span>
+      <div class="ad-box footer-banner" data-ad-slot="footer"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🚢 RutaAduana</h3>
+          <p>Portal divulgativo de comercio exterior, logística multimodal marítima y gestión aduanera para pymes y emprendedores.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Herramientas</h4>
+          <ul>
+            <li><a href="index.html#calculadora-landed">Calculadora Landed Cost</a></li>
+            <li><a href="herramientas/index.html">Peso Volumétrico</a></li>
+            <li><a href="articulos/partida-arancelaria-codigo-hs-aranceles-aduanas.html">Consulta TARIC</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Marco Legal</h4>
+          <ul>
+            <li><a href="politica-de-privacidad.html">Privacidad</a></li>
+            <li><a href="terminos-y-condiciones.html">Términos de Uso</a></li>
+            <li><a href="politica-de-cookies.html">Cookies</a></li>
+            <li><a href="sobre-nosotros.html">Quiénes Somos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="color: #ffffff; font-weight: 700;">contacto@rutaaduana-importaciones.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RutaAduana. Todos los derechos reservados.</p>
+        <p>Monetización responsable conforme a Google AdSense.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <div style="font-size: 0.9rem; color: #cbd5e1;">
+        Utilizamos cookies técnicas y publicitarias de Google AdSense para mantener este portal de acceso libre. Consulta nuestra <a href="politica-de-cookies.html" style="color: #ff9800;">Política de Cookies</a>.
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="cookie-accept" class="btn-cargo" style="padding: 7px 18px; font-size: 0.85rem;">Aceptar</button>
+        <button id="cookie-decline" class="btn-outline" style="padding: 7px 18px; font-size: 0.85rem;">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

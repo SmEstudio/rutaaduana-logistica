@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto y Consultas de Comercio Exterior - RutaAduana</title>
+  <meta name="description" content="Canal oficial de contacto con el equipo técnico de RutaAduana. Sugerencias, reporte de erratas aduaneras y propuestas.">
+  <link rel="canonical" href="https://rutaaduana-importaciones.com/contacto.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        🚢 Ruta<span>Aduana</span>
+        <span class="logo-badge">LOGÍSTICA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="herramientas/index.html">Calculadoras</a></li>
+          <li><a href="articulos/guia-paso-a-paso-importar-desde-china-alibaba.html">Guía Alibaba</a></li>
+          <li><a href="articulos/incoterms-2020-fob-cif-ddp-exw-explicados.html">Incoterms</a></li>
+          <li><a href="sobre-nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top: 30px;">
+    <div class="main-layout single-column">
+      <div class="legal-content">
+        <span class="cargo-stamp">ATENCIÓN & SOPORTE TÉCNICO</span>
+        <h1>Canal Oficial de Contacto</h1>
+        <p style="color: #64748b; margin-bottom: 25px;">
+          ¿Tienes alguna duda sobre nuestras calculadoras de Landed Cost, deseas sugerir una nueva temática de importaciones o notificarnos una novedad arancelaria? Escríbenos a continuación:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 35px;">
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid var(--accent); padding: 22px;">
+            <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.15rem;">📬 Correo Editorial</h3>
+            <p style="font-size: 0.92rem; color: #475569; margin-bottom: 6px;">Consultas generales y prensa:</p>
+            <p style="font-weight: 700; color: var(--accent); font-family: var(--font-mono); font-size: 1.05rem;">contacto@rutaaduana-importaciones.com</p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid var(--primary); padding: 22px;">
+            <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.15rem;">⏱️ Compromiso de Respuesta</h3>
+            <p style="font-size: 0.92rem; color: #475569; line-height: 1.6;">
+              Horario: Lunes a Viernes (09:00 - 18:00 CET).<br>
+              Tiempo medio de respuesta: 24 horas laborables.<br>
+              <em>Nota: No realizamos servicios de intermediación aduanera directa particular ni despacho de contenedores en consignación.</em>
+            </p>
+          </div>
+        </div>
+
+        <h2 style="margin-bottom: 20px;">Formulario Directo</h2>
+        <form id="contact-form" onsubmit="handleContactSubmit(event)" style="background: #ffffff; border: 1px solid #cbd5e1; padding: 26px; border-radius: 4px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-bottom: 18px;">
+            <div class="form-group">
+              <label for="contact-name" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.88rem; color: var(--primary);">Nombre Completo:</label>
+              <input type="text" id="contact-name" class="input-cargo" placeholder="Ej. Mateo Silva" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.88rem; color: var(--primary);">Correo Electrónico:</label>
+              <input type="email" id="contact-email" class="input-cargo" placeholder="tuemail@ejemplo.com" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 18px;">
+            <label for="contact-subject" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.88rem; color: var(--primary);">Motivo del Contacto:</label>
+            <select id="contact-subject" class="input-cargo">
+              <option value="calculadora">Dudas con la Calculadora de Coste (Landed Cost)</option>
+              <option value="articulo">Propuesta o corrección sobre un artículo</option>
+              <option value="legal">Protección de Datos y Privacidad</option>
+              <option value="publicidad">Publicidad y Consultas Comerciales</option>
+              <option value="otro">Otras consultas</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="contact-msg" style="display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.88rem; color: var(--primary);">Tu Mensaje:</label>
+            <textarea id="contact-msg" class="input-cargo" rows="5" placeholder="Escribe aquí tu consulta con el mayor detalle posible..." required style="resize: vertical;"></textarea>
+          </div>
+
+          <div style="margin-bottom: 20px; font-size: 0.85rem; color: #64748b;">
+            <label style="display: flex; gap: 8px; align-items: flex-start; cursor: pointer;">
+              <input type="checkbox" required style="margin-top: 3px;">
+              <span>He leído y acepto la <a href="politica-de-privacidad.html" target="_blank" style="text-decoration: underline; color: var(--accent);">Política de Privacidad</a> y consiento el tratamiento de mis datos de contacto para resolver mi solicitud.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-cargo">Enviar Mensaje</button>
+          
+          <div id="contact-success" style="display: none; margin-top: 20px; padding: 14px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; border-radius: 4px;">
+            ✅ <strong>¡Mensaje recibido!</strong> Nuestro equipo se pondrá en contacto contigo a la mayor brevedad.
+          </div>
+        </form>
+
+        <script>
+        function handleContactSubmit(e) {
+          e.preventDefault();
+          document.getElementById('contact-success').style.display = 'block';
+          document.getElementById('contact-form').reset();
+        }
+        </script>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; 2026 RutaAduana. Todos los derechos reservados.</p>
+      <div>
+        <a href="politica-de-privacidad.html" style="color: #cbd5e1; margin-right: 15px;">Privacidad</a>
+        <a href="terminos-y-condiciones.html" style="color: #cbd5e1;">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/ads-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
